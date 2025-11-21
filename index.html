@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHCSA İmtahan Sualları</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #e4e4e4;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header h1 {
+            font-size: 2.5em;
+            color: #e94560;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(233,69,96,0.5);
+        }
+        .header .subtitle {
+            color: #0f9b0f;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        .machine-title {
+            background: linear-gradient(90deg, #e94560, #0f3460);
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin: 30px 0 20px 0;
+            font-size: 1.3em;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .question-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #e94560;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .question-card:hover {
+            transform: translateX(10px);
+            background: rgba(255,255,255,0.07);
+            box-shadow: 0 10px 40px rgba(233,69,96,0.2);
+        }
+        .question-number {
+            background: #e94560;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .question-title {
+            color: #00d9ff;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .question-content {
+            padding-left: 50px;
+            line-height: 1.8;
+        }
+        .question-content ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+        .question-content li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .question-content li::before {
+            content: "▸";
+            color: #e94560;
+            position: absolute;
+            left: 0;
+        }
+        .note {
+            background: rgba(15, 155, 15, 0.2);
+            border-left: 3px solid #0f9b0f;
+            padding: 12px 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+        .code {
+            background: rgba(0,0,0,0.4);
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: #ffd700;
+            font-size: 0.95em;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.8em; }
+            .question-content { padding-left: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐧 RHCSA İmtahan Sualları</h1>
+            <p class="subtitle">Red Hat Certified System Administrator</p>
+        </div>
+
+        <div class="machine-title">📌 First Machine (node1.lab.example.com)</div>
+
+        <div class="question-card">
+            <div class="question-title">
+                <span class="question-number">1</span>
+                Şəbəkə Konfiqurasiyası
+            </div>
+            <div class="question-content">
+                <p>Aşağıdakı parametrlərlə host konfiqurasiyası aparın:</p>
+                <p style="margin: 10px 0; color: #ffd700;">x.x.x = Sizin NAT şəbəkəniz</p>
+                <ul>
+                    <li>Hostname = <span class="code">server.acf105.local</span></li>
+                    <li>IP Address = <span class="code">x.x.x.101</span></li>
+                    <li>Netmask = <span class="code">255.255.255.0</span></li>
+                    <li>Gateway = <span class="code">x.x.x.2</span></li>
+                    <li>Nameserver = <span class="code">x.x.x.2</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">
+                <span class="question-number">2</span>
+                Local Repository Yaradılması
+            </div>
+            <div class="question-content">
+                <p>Aşağıdakı lokal repository-ləri konfiqurasiya edin (daimi olaraq mount olunmalıdır):</p>
+                <ul>
+                    <li><span class="code">http://10.7.21.x:8989/BaseOS</span></li>
+                    <li><span class="code">http://10.7.21.x:8989/AppStream</span></li>
+                </ul>
+                <div class="note">
+                    <strong>Qeyd:</strong> Repository faylları sistem yenidən başladıqdan sonra da əlçatan olmalıdır.
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">
+                <span class="question-number">3</span>
+                SELinux Konfiqurasiyası
+            </div>
+            <div class="question-content">
+                <p>Nginx servisi yükləyin, <span class="code">9080</span> portunu təyin edin. Bu məzmunu SELinux və Firewall konfiq edərək əlçatanlaşdırın.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">
+                <span class="question-number">4</span>
+                İstifadəçilər, Qruplar və Üzvlüklər
+            </div>
+            <div class="question-content">
+                <p>Aşağıdakıları yaradın:</p>
+                <ul>
+                    <li><span class="code">"teacher"</span> və <span class="code">"acf105"</span> adlı 2 qrup</li>
+                    <li><span class="code">"mansura"</span> adlı istifadəçi - teacher qrupunun əsas, acf105 qrupunun ikincil üzvü</li>
+                    <li><span class="code">"kifayat"</span>, <span class="code">"havva"</span>, <span class="code">"aysun"</span> adlı istifadəçilər - acf105 qrupunun əsas üzvləri olsun</li>
+                    <li><span class="code">"gurbuz"</span> adlı istifadəçi - interaktiv shell-ə giriş hüququ olmasın, və sadəcə öz adında qrupa üzv olsun</li>
+                    <li>Bütün istifadəçilərin şifrəsi: <span class="code">gizlipass123</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">
+                <span class="question-number">5</span>
+                Qrup ID ilə Axtarış
+            </div>
+            <div class="question-content">
+                <p><span class="code">acf105</span> qrupunun ID-sini öyrənin, passwd faylında həmin ID keçən bütün sətirləri tapın və bu sətirləri <span class="code">"/root/acf105_user.txt"</span> faylına kopyalayın.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">
+                <span class="question-number">6</span>
+                Xüsusi UID ilə Yeni İstifadəçi
+            </div>
+            <div class="question-content">
+                <p>Aşağıdakı parametrlərlə yeni istifadəçi yaradın:</p>
+                <ul>
+                    <li>UID = <span class="code">1453</span></li>
+                    <li>İstifadəçi adı = <span class="code">fatih</span></li>
+                    <li>Şifrə = <span class="code">gizlipass123</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">
+                <span class="question-number">7</span>
+                Tar Arxivi Yaradılması
+            </div>
+            <div class="question-content">
+                <p><span class="code">"/usr/sbin"</span> direktoriyasının tar.xz arxivini yaradın və <span class="code">"/root/"</span> direktoriyasında <span class="code">"user.program.tar.xz"</span> olaraq saxlayın.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">
+                <span class="question-number">8</span>
+                Tuned Profili Ayarlanması
+            </div>
+            <div class="question-content">
+                <p>Tuned profilinizə baxın, yüksək performans üçün uyğun olan tuned profilini təyin edin və aktivləşdirin.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🎓 RHCSA İmtahanına Hazırlıq | Uğurlar!</p>
+        </div>
+    </div>
+</body>
+</html>
