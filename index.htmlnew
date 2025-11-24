@@ -205,7 +205,7 @@
                     <li><span class="code">file:///BizimRepo/AppStream</span></li>
                 </ul>
                 <div class="note">
-                    <strong>Qeyd:</strong> Repository faylları sistem yenidən başladıqdan sonra da əlçatan olmalıdır. <span class="code">/etc/yum.repos.d/</span> direktoriyasında <span class="code">.repo</span> faylı yaradın və baseurl parametrlərini düzgün qeyd edin.
+                    <strong>Qeyd:</strong> Repository faylları sistem yenidən başladıqdan sonra da əlçatan olmalıdır.
                 </div>
             </div>
         </div>
@@ -221,12 +221,9 @@
                 <ul>
                     <li>nginx paketini quraşdırın</li>
                     <li>nginx-i <span class="code">8877</span> portunda işə salın</li>
-                    <li>SELinux üçün <span class="code">8877</span> portunu <span class="code">semanage</span> ilə əlavə edin</li>
+                    <li>SELinux üçün <span class="code">8877</span> portunu əlavə edin</li>
                     <li>Firewall-da <span class="code">8877</span> portunu açın</li>
                 </ul>
-                <div class="note">
-                    <strong>Məsləhət:</strong> <span class="code">semanage port -a -t http_port_t -p tcp 8877</span> və <span class="code">firewall-cmd --permanent --add-port=8877/tcp</span>
-                </div>
             </div>
         </div>
 
@@ -256,9 +253,6 @@
             </div>
             <div class="question-content">
                 <p><span class="code">acf105</span> qrupunun ID-sini öyrənin, passwd faylında həmin ID keçən bütün sətirləri tapın və bu sətirləri <span class="code">"/root/acf105_user.txt"</span> faylına kopyalayın.</p>
-                <div class="note">
-                    <strong>Məsləhət:</strong> <span class="code">grep "^acf105:" /etc/group</span> ilə GID tapın, sonra <span class="code">awk -F: '$4==GID' /etc/passwd</span> istifadə edin.
-                </div>
             </div>
         </div>
 
@@ -275,9 +269,6 @@
                     <li>İstifadəçi adı = <span class="code">fatih</span></li>
                     <li>Şifrə = <span class="code">gizlipass123</span></li>
                 </ul>
-                <div class="note">
-                    <strong>Məsləhət:</strong> <span class="code">useradd -u 1453 fatih</span> və <span class="code">echo "gizlipass123" | passwd --stdin fatih</span>
-                </div>
             </div>
         </div>
 
@@ -289,9 +280,6 @@
             </div>
             <div class="question-content">
                 <p><span class="code">"/usr/sbin"</span> direktoriyasının tar.xz arxivini yaradın və <span class="code">"/root/"</span> direktoriyasında <span class="code">"user.program.tar.xz"</span> olaraq saxlayın.</p>
-                <div class="note">
-                    <strong>Məsləhət:</strong> <span class="code">tar -cJf /root/user.program.tar.xz /usr/sbin</span>
-                </div>
             </div>
         </div>
 
